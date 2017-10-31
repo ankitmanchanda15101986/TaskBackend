@@ -96,7 +96,7 @@ public class TaskControllerTest {
 	public final void testDeleteTask() {
 		try {
 			Mockito.when(service.deleteTask(1)).thenReturn(getTaskDto());
-			Mockito.when(mapper.convertUpdateTaskDtoToResponse(getTaskDto())).thenReturn(getResponseSuccess());
+			Mockito.when(mapper.convertDeletionTaskDtoToResponse(getTaskDto())).thenReturn(getResponseSuccess());
 			Response response = mockController.deleteTask(1);
 			assertEquals("200", response.getStatus_codes());
 			assertEquals("SUCCESS", response.getStatus_msg());

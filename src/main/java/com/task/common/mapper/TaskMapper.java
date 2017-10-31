@@ -26,12 +26,9 @@ public class TaskMapper {
 	 * @param operation 
 	 * @return
 	 */
-	public TaskEntity convertDTOToEntity(TaskDTO dto, String operation) {
+	public TaskEntity convertDTOToEntity(TaskDTO dto) {
 		TaskEntity entity = new TaskEntity();
 		if(dto != null){
-			if(operation.equalsIgnoreCase("u")) {
-				entity.setId(dto.getTaskId());
-			}
 			if(StringUtils.stripToNull(dto.getTaskName()) != null) {
 				entity.setTaskName(dto.getTaskName());
 			}

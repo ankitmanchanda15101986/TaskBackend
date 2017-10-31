@@ -35,7 +35,7 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	public TaskDTO createTask(TaskDTO task) throws ParseException {
 		task.setTaskCurrentStatus("Pending");
-		TaskEntity entity = mapper.convertDTOToEntity(task,"c");
+		TaskEntity entity = mapper.convertDTOToEntity(task);
 		entity = repository.save(entity);
 		return mapper.convertEntityToDTO(entity);
 	}
